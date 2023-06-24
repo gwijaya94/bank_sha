@@ -1,5 +1,7 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/pages/sign_in_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -128,7 +130,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               width: double.infinity,
                               height: 50,
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                      builder: (context) => const SignInPage(),
+                                    ),
+                                  );
+                                },
                                 child: Text(
                                   'Sign In',
                                   style: greyTextStyle.copyWith(
