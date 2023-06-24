@@ -2,8 +2,28 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class OnBoardingPage extends StatelessWidget {
+class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
+
+  @override
+  State<OnBoardingPage> createState() => _OnBoardingPageState();
+}
+
+class _OnBoardingPageState extends State<OnBoardingPage> {
+  int currentIndex = 0;
+  CarouselController carouselController = CarouselController();
+
+  List<String> titles = [
+    "Grow Your\nFinancial Today",
+    "Build From\nZero to Freedom",
+    "Start Together",
+  ];
+
+  List<String> subTitles = [
+    "Our system is helping you to\nachieve a better goal",
+    "We provide tips for you so that\nyou can adapt easier",
+    "We will guide you to where\nyou wanted it too",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +48,16 @@ class OnBoardingPage extends StatelessWidget {
                   height: 331,
                 ),
               ],
+              carouselController: carouselController,
               options: CarouselOptions(
                 height: 331,
-                viewportFraction: 1,
+                enlargeCenterPage: true,
                 enableInfiniteScroll: false,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
               ),
             ),
             const SizedBox(
@@ -53,7 +79,7 @@ class OnBoardingPage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Grow Your\nFinancial Today',
+                    titles[currentIndex],
                     textAlign: TextAlign.center,
                     style: blackTextStyle.copyWith(
                       fontSize: 20,
@@ -64,7 +90,7 @@ class OnBoardingPage extends StatelessWidget {
                     height: 26,
                   ),
                   Text(
-                    "Our system is helping you to\nachieve a better goal",
+                    subTitles[currentIndex],
                     textAlign: TextAlign.center,
                     style: greyTextStyle.copyWith(
                       fontSize: 16,
@@ -83,7 +109,7 @@ class OnBoardingPage extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: blueColor,
+                          color: currentIndex == 0 ? blueColor : lightBgColor,
                         ),
                       ),
                       Container(
@@ -94,7 +120,7 @@ class OnBoardingPage extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: lightBgColor,
+                          color: currentIndex == 1 ? blueColor : lightBgColor,
                         ),
                       ),
                       Container(
@@ -105,7 +131,7 @@ class OnBoardingPage extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: lightBgColor,
+                          color: currentIndex == 2 ? blueColor : lightBgColor,
                         ),
                       ),
                       const Spacer(),
@@ -119,7 +145,9 @@ class OnBoardingPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(56),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            carouselController.nextPage();
+                          },
                           child: Text(
                             'Continue',
                             style: whiteTextStyle.copyWith(
