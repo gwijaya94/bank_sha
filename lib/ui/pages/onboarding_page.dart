@@ -1,5 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/pages/sign_in_page.dart';
+import 'package:bank_sha/ui/widgets/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -74,7 +75,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
               decoration: BoxDecoration(
                 color: whiteColor,
-                // color: Colors.amber,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -103,27 +103,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   currentIndex == 2
                       ? Column(
                           children: [
-                            SizedBox(
-                              width: double.infinity,
-                              height: 50,
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(56),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                child: Text(
-                                  'Get Started',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ),
+                            CustomFilledButton(
+                              title: 'Get Started',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
                             ),
                             SizedBox(
                               width: double.infinity,
@@ -149,67 +133,22 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         )
                       : Row(
                           children: [
-                            Container(
-                              width: 12,
-                              height: 12,
-                              margin: const EdgeInsets.only(
-                                right: 10,
-                              ),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: currentIndex == 0
-                                    ? blueColor
-                                    : lightBgColor,
-                              ),
+                            PaginationItem(
+                              isActive: currentIndex == 0,
                             ),
-                            Container(
-                              width: 12,
-                              height: 12,
-                              margin: const EdgeInsets.only(
-                                right: 10,
-                              ),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: currentIndex == 1
-                                    ? blueColor
-                                    : lightBgColor,
-                              ),
+                            PaginationItem(
+                              isActive: currentIndex == 1,
                             ),
-                            Container(
-                              width: 12,
-                              height: 12,
-                              margin: const EdgeInsets.only(
-                                right: 10,
-                              ),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: currentIndex == 2
-                                    ? blueColor
-                                    : lightBgColor,
-                              ),
+                            PaginationItem(
+                              isActive: currentIndex == 2,
                             ),
                             const Spacer(),
-                            SizedBox(
+                            CustomFilledButton(
+                              title: 'Continue',
                               width: 150,
-                              height: 50,
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(56),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                child: Text(
-                                  'Continue',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ),
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
                             ),
                           ],
                         ),
