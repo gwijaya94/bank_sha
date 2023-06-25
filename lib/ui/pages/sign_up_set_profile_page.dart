@@ -44,8 +44,53 @@ class SignUpProfilePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    color: lightBgColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      "assets/ic_upload.png",
+                      width: 32,
+                      height: 32,
+                    ),
+                  ),
+                ),
+                // ? Uploaded Profile
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     color: lightBgColor,
+                //     shape: BoxShape.circle,
+                //     image: const DecorationImage(
+                //       fit: BoxFit.cover,
+                //       image: AssetImage("assets/img_profile.png"),
+                //     ),
+                //   ),
+                // ),
+
+                const SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  "Shayna Hanna",
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const InputForm(
+                  label: "Set PIN (6 digit number)",
+                ),
                 const SizedBox(
                   height: 30,
                 ),
