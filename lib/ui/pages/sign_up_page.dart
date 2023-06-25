@@ -66,7 +66,9 @@ class SignUpPage extends StatelessWidget {
                   height: 30,
                 ),
                 CustomFilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/sign-up-upload");
+                  },
                   title: 'Continue',
                 ),
               ],
