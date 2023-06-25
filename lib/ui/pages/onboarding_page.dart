@@ -108,20 +108,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                 carouselController.nextPage();
                               },
                             ),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 50,
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, "/sign-in");
-                                },
-                                child: Text(
-                                  'Sign In',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
+                            CustomTextButton(
+                              title: 'Sign In',
+                              onPressed: () {
+                                Navigator.pushNamed(context, "/sign-in");
+                              },
                             ),
                           ],
                         )

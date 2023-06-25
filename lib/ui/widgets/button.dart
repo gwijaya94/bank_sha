@@ -64,6 +64,11 @@ class CustomTextButton extends StatelessWidget {
       height: height,
       child: TextButton(
         onPressed: onPressed,
+        style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(56),
+          ),
+        ),
         child: Text(
           title,
           style: greyTextStyle
