@@ -9,7 +9,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: lightBgColor,
       body: ListView(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         children: [
           Container(
             width: 155,
@@ -43,7 +43,105 @@ class SignInPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
-              children: const [],
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // TODO: EMAIL INPUT
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Email Address",
+                      style: blackTextStyle.copyWith(
+                        fontWeight: medium,
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        contentPadding: const EdgeInsets.all(12),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                // TODO: PASSWORD INPUT
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Password",
+                      style: blackTextStyle.copyWith(
+                        fontWeight: medium,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        contentPadding: const EdgeInsets.all(12),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    "Forgot Password?",
+                    style: blueTextStyle,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                // TODO: Button
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: purpleColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(56),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Sign In',
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "Create New Account",
+              style: greyTextStyle.copyWith(
+                fontSize: 16,
+              ),
             ),
           ),
         ],
