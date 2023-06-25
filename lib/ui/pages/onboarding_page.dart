@@ -105,7 +105,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             CustomFilledButton(
                               title: 'Get Started',
                               onPressed: () {
-                                carouselController.nextPage();
+                                Navigator.pushNamed(context, "/sign-up");
                               },
                             ),
                             CustomTextButton(
