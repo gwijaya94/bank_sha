@@ -95,7 +95,9 @@ class SignUpProfilePage extends StatelessWidget {
                   height: 30,
                 ),
                 CustomFilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/sign-up-set-ktp");
+                  },
                   title: 'Continue',
                 ),
               ],
