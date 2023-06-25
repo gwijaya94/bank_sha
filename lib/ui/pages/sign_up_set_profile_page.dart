@@ -2,8 +2,8 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/index.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignUpProfilePage extends StatelessWidget {
+  const SignUpProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,42 +46,15 @@ class SignUpPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const InputForm(
-                  label: "Full Name",
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const InputForm(
-                  label: "Email Address",
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const InputForm(
-                  label: "Password",
-                  obscureText: true,
-                ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/sign-up-set-profile");
-                  },
+                  onPressed: () {},
                   title: 'Continue',
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomTextButton(
-            title: "Sign In",
-            onPressed: () {
-              Navigator.pushNamed(context, "/sign-in");
-            },
           ),
         ],
       ),
