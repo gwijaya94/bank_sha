@@ -38,7 +38,11 @@ class SignUpStatusPage extends StatelessWidget {
               title: "Get Started",
               width: 185,
               onPressed: () {
-                Navigator.pushNamed(context, "/home");
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  "/home",
+                  (route) => false,
+                );
               },
             )
           ],
