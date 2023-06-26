@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         "/sign-up": (context) => const SignUpPage(),
         "/sign-up-set-profile": (context) => const SignUpProfilePage(),
         "/sign-up-set-ktp": (context) => const SignUpProfileKTPPage(),
+        "/sign-up-status": (context) => const SignUpStatusPage(),
       },
     );
   }

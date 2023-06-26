@@ -90,7 +90,9 @@ class SignUpProfileKTPPage extends StatelessWidget {
                   height: 50,
                 ),
                 CustomFilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/sign-up-status");
+                  },
                   title: 'Continue',
                 ),
               ],
@@ -101,7 +103,9 @@ class SignUpProfileKTPPage extends StatelessWidget {
           ),
           CustomTextButton(
             title: "Skip for Now",
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "/sign-up-status");
+            },
           ),
         ],
       ),
