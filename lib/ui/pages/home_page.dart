@@ -72,6 +72,14 @@ class HomePage extends StatelessWidget {
           width: 24,
         ),
       ),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
+          children: [],
+        ),
+      ),
     );
   }
 }
