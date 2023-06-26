@@ -37,7 +37,9 @@ class SignUpStatusPage extends StatelessWidget {
             CustomFilledButton(
               title: "Get Started",
               width: 185,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/home");
+              },
             )
           ],
         ),
