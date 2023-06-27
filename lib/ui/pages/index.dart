@@ -6,3 +6,4 @@ export 'sign_up_set_profile_page.dart';
 export 'sign_up_set_ktp_page.dart';
 export 'sign_up_status_page.dart';
 export 'home_page.dart';
+export 'profile_page.dart';

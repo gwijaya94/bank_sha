@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
             horizontal: 24,
           ),
           children: [
-            buildProfile(),
+            buildProfile(context),
             buildWalletCard(),
             buildLevelSection(),
             buildServices(),
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-Widget buildProfile() {
+Widget buildProfile(BuildContext context) {
   return Container(
     margin: const EdgeInsets.only(
       top: 40,
@@ -118,29 +118,32 @@ Widget buildProfile() {
           ],
         ),
         const Spacer(),
-        Container(
-          width: 60,
-          height: 60,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage("assets/img_profile.png"),
-            ),
-          ),
-          child: Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              width: 18,
-              height: 18,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: whiteColor,
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, "/profile"),
+          child: Container(
+            width: 60,
+            height: 60,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage("assets/img_profile.png"),
               ),
-              child: Center(
-                child: Icon(
-                  Icons.check_circle,
-                  size: 16,
-                  color: greenColor,
+            ),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: 18,
+                height: 18,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: whiteColor,
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.check_circle,
+                    size: 16,
+                    color: greenColor,
+                  ),
                 ),
               ),
             ),
