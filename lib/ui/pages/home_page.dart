@@ -84,6 +84,7 @@ class HomePage extends StatelessWidget {
             buildLevelSection(),
             buildServices(),
             buildLatestTransactions(),
+            buildSendAgainSection(),
           ],
         ),
       ),
@@ -358,6 +359,52 @@ Widget buildLatestTransactions() {
                 iconUrl: "assets/ic_transaction_cat5.png",
                 time: "Feb 18",
                 value: "- 90.000",
+              ),
+            ],
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+Widget buildSendAgainSection() {
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 30,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Send Again",
+          style: blackTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: semiBold,
+          ),
+        ),
+        const SizedBox(
+          height: 14,
+        ),
+        const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              HomeUserItem(
+                userName: "yuanita",
+                url: "assets/img_friend1.png",
+              ),
+              HomeUserItem(
+                userName: "jani",
+                url: "assets/img_friend2.png",
+              ),
+              HomeUserItem(
+                userName: "urip",
+                url: "assets/img_friend3.png",
+              ),
+              HomeUserItem(
+                userName: "masa",
+                url: "assets/img_friend4.png",
               ),
             ],
           ),
