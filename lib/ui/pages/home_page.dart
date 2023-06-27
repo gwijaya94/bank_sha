@@ -85,6 +85,7 @@ class HomePage extends StatelessWidget {
             buildServices(),
             buildLatestTransactions(),
             buildSendAgainSection(),
+            buildFriendlyTips(context),
           ],
         ),
       ),
@@ -408,6 +409,65 @@ Widget buildSendAgainSection() {
               ),
             ],
           ),
+        )
+      ],
+    ),
+  );
+}
+
+Widget buildFriendlyTips(BuildContext context) {
+  Size screenSize = MediaQuery.sizeOf(context);
+  double spacingX = 17;
+  double tipsWidth = (screenSize.width - 24 * 2 - spacingX) / 2;
+
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 30,
+      bottom: 50,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Friendly Tips",
+          style: blackTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: semiBold,
+          ),
+        ),
+        const SizedBox(
+          height: 6,
+        ),
+        Wrap(
+          spacing: spacingX,
+          runSpacing: 18,
+          runAlignment: WrapAlignment.end,
+          children: [
+            HomeTipsItem(
+              width: tipsWidth,
+              title: "Best tips for using a credit card",
+              imgUrl: "assets/img_tips1.png",
+              url: "",
+            ),
+            HomeTipsItem(
+              width: tipsWidth,
+              title: "Spot the good pie of finance model",
+              imgUrl: "assets/img_tips2.png",
+              url: "",
+            ),
+            HomeTipsItem(
+              width: tipsWidth,
+              title: "Great hack to get better advices",
+              imgUrl: "assets/img_tips3.png",
+              url: "",
+            ),
+            HomeTipsItem(
+              width: tipsWidth,
+              title: "Save more penny buy this instead",
+              imgUrl: "assets/img_tips4.png",
+              url: "",
+            ),
+          ],
         )
       ],
     ),
