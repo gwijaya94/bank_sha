@@ -18,7 +18,7 @@ class ProfilePage extends StatelessWidget {
         ),
         children: [
           Container(
-            padding: const EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30).copyWith(bottom: 0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
@@ -64,8 +64,45 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
+                ProfileMenuItem(
+                  iconUrl: "assets/ic_edit_profile.png",
+                  title: "Edit Profile",
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: "assets/ic_pin.png",
+                  title: "My PIN",
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: "assets/ic_wallet.png",
+                  title: "Wallet Settigs",
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: "assets/ic_reward.png",
+                  title: "My Rewards",
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: "assets/ic_help.png",
+                  title: "Help Center",
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: "assets/ic_logout.png",
+                  title: "Logout",
+                  onTap: () {},
+                ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 90,
+          ),
+          CustomTextButton(
+            title: "Report a Problem",
+            onPressed: () {},
           ),
         ],
       ),
