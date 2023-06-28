@@ -16,8 +16,11 @@ class _PinPageState extends State<PinPage> {
   addPin(String number) {
     if (inputController.text.length < 6) {
       setState(() {
-        inputController.text = inputController.text + number;
+        inputController.text = inputController.text + number.toString();
       });
+    }
+    if (inputController.text == "123123") {
+      Navigator.pop(context, true);
     }
   }
 
