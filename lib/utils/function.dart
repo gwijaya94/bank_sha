@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 Future<void> launchLink(String url) async {
@@ -8,4 +9,8 @@ Future<void> launchLink(String url) async {
       mode: LaunchMode.externalApplication,
     );
   }
+}
+
+Size getScreenSize(BuildContext context) {
+  return MediaQuery.sizeOf(context);
 }

@@ -17,7 +17,7 @@ class HomeUserItem extends StatelessWidget {
     return Container(
       width: 90,
       height: 120,
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         right: 17,
       ),
       decoration: BoxDecoration(
