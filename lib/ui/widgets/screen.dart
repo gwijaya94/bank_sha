@@ -1,4 +1,3 @@
-import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class Screen extends StatelessWidget {
@@ -16,7 +15,7 @@ class Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor ?? lightBgColor,
+      backgroundColor: backgroundColor,
       appBar: appBar,
       body: SafeArea(
         child: child,

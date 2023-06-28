@@ -8,7 +8,6 @@ class SignUpStatusPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBgColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -1,3 +1,4 @@
+import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/pages/index.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: loadThemeData(),
       routes: {
         "/": (context) => const SplashPage(),
         "/onboarding": (context) => const OnBoardingPage(),

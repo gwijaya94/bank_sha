@@ -12,8 +12,8 @@ class AppBarHeader extends StatelessWidget implements PreferredSizeWidget {
   const AppBarHeader({
     Key? key,
     required this.title,
-    this.isCenterTitle = true,
-    this.elevation = 0,
+    this.isCenterTitle,
+    this.elevation,
     this.iconTheme,
     this.titleStyle,
     this.backgroundColor,
@@ -21,20 +21,15 @@ class AppBarHeader extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color defBgColor = backgroundColor ?? lightBgColor;
-
-    TextStyle defTextStyle = blackTextStyle.copyWith(
-      fontSize: 20,
-      fontWeight: semiBold,
-    );
-    IconThemeData defIconTheme = iconTheme ?? IconThemeData(color: blackColor);
+    TextStyle? defTextStyle = titleStyle;
+    IconThemeData? defIconTheme = iconTheme;
 
     return AppBar(
       centerTitle: isCenterTitle,
       elevation: elevation,
       iconTheme: defIconTheme,
-      title: Text(title, style: defTextStyle.merge(titleStyle)),
-      backgroundColor: defBgColor,
+      title: Text(title, style: defTextStyle),
+      backgroundColor: backgroundColor,
     );
   }
 

@@ -8,7 +8,6 @@ class SignUpProfileKTPPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBgColor,
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [

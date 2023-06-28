@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Color whiteColor = const Color(0xffFFFFFF);
@@ -28,3 +29,20 @@ FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 FontWeight extraBold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
+
+// THEME DATA
+ThemeData loadThemeData() {
+  return ThemeData(
+    scaffoldBackgroundColor: lightBgColor,
+    appBarTheme: AppBarTheme(
+      backgroundColor: lightBgColor,
+      elevation: 0,
+      iconTheme: IconThemeData(color: blackColor),
+      centerTitle: true,
+      titleTextStyle: blackTextStyle.copyWith(
+        fontSize: 20,
+        fontWeight: semiBold,
+      ),
+    ),
+  );
+}
