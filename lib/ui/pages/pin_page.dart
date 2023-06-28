@@ -3,8 +3,32 @@ import 'package:bank_sha/ui/widgets/index.dart';
 import 'package:bank_sha/utils/index.dart';
 import 'package:flutter/material.dart';
 
-class PinPage extends StatelessWidget {
+class PinPage extends StatefulWidget {
   const PinPage({Key? key}) : super(key: key);
+
+  @override
+  State<PinPage> createState() => _PinPageState();
+}
+
+class _PinPageState extends State<PinPage> {
+  final TextEditingController inputController = TextEditingController(text: "");
+
+  addPin(String number) {
+    if (inputController.text.length < 6) {
+      setState(() {
+        inputController.text = inputController.text + number;
+      });
+    }
+  }
+
+  deletePin() {
+    if (inputController.text.isNotEmpty) {
+      setState(() {
+        String textValue = inputController.text;
+        inputController.text = textValue.substring(0, textValue.length - 1);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +59,13 @@ class PinPage extends StatelessWidget {
               SizedBox(
                 width: screenSize.width - padHorizontal * 2,
                 child: TextFormField(
+                  enabled: false,
+                  controller: inputController,
                   obscureText: true,
-                  cursorColor: greyColor,
                   decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
+                    suffixIconColor: greenColor,
+                    contentPadding: const EdgeInsets.only(right: -24),
+                    disabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: greyColor,
                       ),
@@ -54,7 +81,6 @@ class PinPage extends StatelessWidget {
                     fontWeight: medium,
                     letterSpacing: 16,
                   ),
-                  maxLength: 6,
                   textAlign: TextAlign.center,
                   obscuringCharacter: "*",
                 ),
@@ -68,39 +94,57 @@ class PinPage extends StatelessWidget {
                 children: [
                   CustomInputButton(
                     title: "1",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("1");
+                    },
                   ),
                   CustomInputButton(
                     title: "2",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("2");
+                    },
                   ),
                   CustomInputButton(
                     title: "3",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("3");
+                    },
                   ),
                   CustomInputButton(
                     title: "4",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("4");
+                    },
                   ),
                   CustomInputButton(
                     title: "5",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("5");
+                    },
                   ),
                   CustomInputButton(
                     title: "6",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("6");
+                    },
                   ),
                   CustomInputButton(
                     title: "7",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("7");
+                    },
                   ),
                   CustomInputButton(
                     title: "8",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("8");
+                    },
                   ),
                   CustomInputButton(
                     title: "9",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("9");
+                    },
                   ),
                   const SizedBox(
                     width: 60,
@@ -108,10 +152,14 @@ class PinPage extends StatelessWidget {
                   ),
                   CustomInputButton(
                     title: "0",
-                    onTap: () {},
+                    onTap: () {
+                      addPin("0");
+                    },
                   ),
                   CustomInputButton(
-                    onTap: () {},
+                    onTap: () {
+                      deletePin();
+                    },
                     contentWidget: Icon(
                       Icons.arrow_back,
                       color: whiteColor,
