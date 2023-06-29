@@ -11,3 +11,4 @@ export 'pin_page.dart';
 export 'profile_edit_page.dart';
 export 'profile_edit_pin_page.dart';
 export 'profile_edit_status_page.dart';
+export 'topup_page.dart';
