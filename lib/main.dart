@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/profile-edit-status": (context) => const ProfileEditStatusPage(),
         "/topup": (context) => const TopupPage(),
         "/topup-amount": (context) => const TopupAmoutPage(),
+        "/topup-status": (context) => const TopupStatusPage(),
       },
     );
   }

@@ -126,14 +126,22 @@ class _TopupAmoutPageState extends State<TopupAmoutPage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           CustomFilledButton(
             title: "Checkout Now",
-            onPressed: () {},
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, "/pin") == true) {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  "/topup-status",
+                  (route) => false,
+                );
+              }
+            },
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           CustomTextButton(
