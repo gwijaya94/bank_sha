@@ -6,6 +6,7 @@ class InputForm extends StatelessWidget {
   final bool obscureText;
   final String? initialValue;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
   final void Function(String)? onChanged, onEditingComplete;
 
   const InputForm({
@@ -16,6 +17,7 @@ class InputForm extends StatelessWidget {
     this.onChanged,
     this.onEditingComplete,
     this.controller,
+    this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -34,6 +36,7 @@ class InputForm extends StatelessWidget {
           height: 8,
         ),
         TextFormField(
+          keyboardType: keyboardType,
           controller: controller,
           initialValue: initialValue,
           onChanged: onChanged,
