@@ -8,3 +8,4 @@ export "home_tips_item.dart";
 export "screen.dart";
 export "app_bar_header.dart";
 export "profile_menu_item.dart";
+export "bank_item.dart";
