@@ -6,7 +6,7 @@ Future<void> launchLink(String url) async {
   if (canLaunch) {
     await launchUrlString(
       url,
-      mode: LaunchMode.externalApplication,
+      mode: LaunchMode.inAppWebView,
     );
   }
 }
