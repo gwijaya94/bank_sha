@@ -2,6 +2,7 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/index.dart';
 import 'package:bank_sha/utils/index.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TopupAmoutPage extends StatefulWidget {
   const TopupAmoutPage({Key? key}) : super(key: key);
@@ -14,12 +15,32 @@ class _TopupAmoutPageState extends State<TopupAmoutPage> {
   final TextEditingController inputController =
       TextEditingController(text: "0");
 
+  @override
+  void initState() {
+    super.initState();
+
+    inputController.addListener(() {
+      final text = inputController.text;
+
+      inputController.value = inputController.value.copyWith(
+        text: NumberFormat.currency(
+          locale: "id",
+          decimalDigits: 0,
+          symbol: "",
+        ).format(
+          int.parse(
+            text.replaceAll(".", ""),
+          ),
+        ),
+      );
+    });
+  }
+
   addAmount(String number) {
     setState(() {
-      if (inputController.text == "0") {
-        inputController.text = "";
-      }
-      inputController.text = inputController.text + number.toString();
+      String tempValue =
+          inputController.text == "0" ? "" : inputController.text;
+      inputController.text = tempValue + number;
     });
   }
 
@@ -27,11 +48,12 @@ class _TopupAmoutPageState extends State<TopupAmoutPage> {
     if (inputController.text.isNotEmpty) {
       setState(() {
         String textValue = inputController.text;
-        inputController.text = textValue.substring(0, textValue.length - 1);
+        String tempValue = textValue.substring(0, textValue.length - 1);
 
-        if (inputController.text.isEmpty) {
-          inputController.text = "0";
+        if (tempValue.isEmpty) {
+          tempValue = "0";
         }
+        inputController.text = tempValue;
       });
     }
   }
@@ -133,6 +155,7 @@ class _TopupAmoutPageState extends State<TopupAmoutPage> {
             title: "Checkout Now",
             onPressed: () async {
               if (await Navigator.pushNamed(context, "/pin") == true) {
+                await launchLink("https://demo.midtrans.com");
                 Navigator.pushNamedAndRemoveUntil(
                   context,
                   "/topup-status",
