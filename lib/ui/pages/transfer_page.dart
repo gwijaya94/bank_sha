@@ -29,9 +29,51 @@ class TransferPage extends StatelessWidget {
           ),
           const InputForm(
             hints: "by username",
-          )
+          ),
+          buildRecentUsers(),
         ],
       ),
     );
   }
+}
+
+Widget buildRecentUsers() {
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 40,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Recent Users",
+          style: blackTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: semiBold,
+          ),
+        ),
+        const SizedBox(
+          height: 14,
+        ),
+        const TransferRecentUserItem(
+          imageUrl: "assets/img_friend1.png",
+          name: "Yonna Jie",
+          username: "yoenna",
+          isVerified: false,
+        ),
+        const TransferRecentUserItem(
+          imageUrl: "assets/img_friend2.png",
+          name: "Yonna Jie",
+          username: "yoenna",
+          isVerified: true,
+        ),
+        const TransferRecentUserItem(
+          imageUrl: "assets/img_friend3.png",
+          name: "Yonna Jie",
+          username: "yoenna",
+          isVerified: true,
+        ),
+      ],
+    ),
+  );
 }
