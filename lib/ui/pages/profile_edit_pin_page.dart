@@ -26,20 +26,20 @@ class ProfileEditPinPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InputForm(
+                const InputForm(
                   label: "Curent PIN",
                   obscureText: true,
                   maxLength: 6,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
-                InputForm(
+                const InputForm(
                   label: "New Pin",
                   obscureText: true,
                   maxLength: 6,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(

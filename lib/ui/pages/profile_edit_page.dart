@@ -26,30 +26,30 @@ class ProfileEditPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InputForm(
+                const InputForm(
                   label: "Username",
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
-                InputForm(
+                const InputForm(
                   label: "Fullname",
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
-                InputForm(
+                const InputForm(
                   label: "Email Address",
                   keyboardType: TextInputType.emailAddress,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
-                InputForm(
+                const InputForm(
                   label: "Password",
                   obscureText: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(

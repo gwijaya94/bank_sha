@@ -90,7 +90,7 @@ class TopupPage extends StatelessWidget {
             title: "Bank OCBC",
             imageUrl: "assets/img_bank_ocbc.png",
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           CustomFilledButton(
