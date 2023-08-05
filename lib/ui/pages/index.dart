@@ -15,3 +15,5 @@ export 'topup_page.dart';
 export 'topup_amount_page.dart';
 export 'topup_status_page.dart';
 export 'transfer_page.dart';
+export 'transfer_amount_page.dart';
+export 'transfer_status_page.dart';
